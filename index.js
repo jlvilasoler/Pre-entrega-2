@@ -1,8 +1,11 @@
+//STOCK DE PRODUCTOS POR E-COMMERCE (COMPRA Y VENTA):
+
 
 class Producto{
-    constructor(fechaCompra,idProveedor,seccion,id,nombreDeProducto,costoConIva,cantidad,plazoDePago){
+    constructor(fechaCompra,idProveedor,numeroFactura,seccion,id,nombreDeProducto,costoConIva,cantidad,plazoDePago){
         this.fechaCompra = fechaCompra;
         this.idProveedor = idProveedor;
+        this.numeroFactura = numeroFactura;
         this.seccion = seccion;
         this.id = id;
         this.nombreDeProducto = nombreDeProducto;
@@ -38,10 +41,10 @@ class Producto{
 
 }
 
-const producto1 = new Producto("12-12-12",9991,"BEBIDAS",60001,"COCA COLA LIGHT 600ML",100,2,"120 DIAS");
-const producto2 = new Producto("12-12-12",9992,"BEBIDAS",60002,"POMELO PASO DE LOS TOROS BT.500ML",100,2,"120 DIAS");
-const producto3 = new Producto("12-12-12",9993,"BEBIDAS",60003,"COCA COLA BT 600ML",100,2,"120 DIAS");
-const producto4 = new Producto("12-12-12",9994,"BEBIDAS",60004,"WHISKY JOHNNIE WALKER-ETIQUETA NEGRA 1L",100,2,"120 DIAS");
+const producto1 = new Producto("12-12-12",9991,1001,"BEBIDAS",60001,"COCA COLA LIGHT 600ML",100,2,"120 DIAS");
+const producto2 = new Producto("12-12-12",9992,1023,"BEBIDAS",60002,"POMELO PASO DE LOS TOROS BT.500ML",100,2,"120 DIAS");
+const producto3 = new Producto("12-12-12",9993,1011,"BEBIDAS",60003,"COCA COLA BT 600ML",100,2,"120 DIAS");
+const producto4 = new Producto("12-12-12",9994,1090,"BEBIDAS",60004,"WHISKY JOHNNIE WALKER-ETIQUETA NEGRA 1L",100,2,"120 DIAS");
 
 const productos = [producto1,producto2,producto3,producto4];
 console.log(productos)
@@ -54,13 +57,14 @@ console.log(productos)
 function agregarProductos(){
     let fechaCompra = prompt("Ingrese la fecha de compra: (formato dd-mm-yy)");
     let idProveedor = prompt("Ingrese el número de proveedor (Ej. 1190):");
+    let numeroFactura = prompt("Ingrese el número de factura (Ej. 5052):");
     let seccion = prompt("Ingrese sección: (Ej.BEBIDAS)");
     let id = parseInt(prompt("Ingrese el id del producto: (EJ. 60010)"));
     let nombreDeProducto = prompt("Ingrese el nombre del producto: (Ej. SPRITE ZERO BT 1L)");
     let costoConIva = parseFloat(prompt("Ingrese el precio con iva que compramos la mercaderia: (Ej. 120)"));
     let cantidad = parseInt(prompt("Ingrese la cantidad comprada: (Ej. 10)"));
     let plazoDePago = prompt("Ingrese plazo de pago: (Ej. 120 DIAS)");
-    productos.push(new Producto(fechaCompra,idProveedor,seccion,id,nombreDeProducto,costoConIva,cantidad,plazoDePago));
+    productos.push(new Producto(fechaCompra,idProveedor,numeroFactura,seccion,id,nombreDeProducto,costoConIva,cantidad,plazoDePago));
 }
 agregarProductos();
 console.log(productos);
@@ -77,7 +81,7 @@ for(const prod of productos){
     prod.gananciaSinIva();  
     prod.IvaVentas();
     prod.IvaCompras();
-    console.table(prod.fechaCompra + " " + prod.seccion + " " + prod.idProveedor + " " + prod.plazoDePago + " " + prod.id + " " + prod.nombreDeProducto + " " + prod.costoSinIva + " " + prod.costoConIva+ " " + prod.precioVentaSinIva + " " + prod.precioVentaConIva + " " + prod.cantidad + " " + prod.margen + " " + prod.gananciaConIva + " " + prod.gananciaSinIva + " " + prod.IvaCompras + " " + prod.IvaVentas);
+    console.table(prod.fechaCompra + " " + prod.seccion + " " + prod.idProveedor + " " + prod.numeroFactura + " " + prod.plazoDePago + " " + prod.id + " " + prod.nombreDeProducto + " " + prod.costoSinIva + " " + prod.costoConIva+ " " + prod.precioVentaSinIva + " " + prod.precioVentaConIva + " " + prod.cantidad + " " + prod.margen + " " + prod.gananciaConIva + " " + prod.gananciaSinIva + " " + prod.IvaCompras + " " + prod.IvaVentas);
 }
 
 // 3 - REDUCE:
