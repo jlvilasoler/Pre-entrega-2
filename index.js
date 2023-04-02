@@ -53,13 +53,13 @@ console.log(productos)
 // 1 - FUNCIONALIDAD PARA AGREGAR PRODUCTOS COMPRADOS (INGRESO DE MERCADERIA):
 function agregarProductos(){
     let fechaCompra = prompt("Ingrese la fecha de compra: (formato dd-mm-yy)");
-    let idProveedor = prompt("Ingrese el número de proveedor:");
-    let seccion = prompt("Ingrese sección:");
-    let id = parseInt(prompt("Ingrese el id del producto:"));
-    let nombreDeProducto = prompt("Ingrese el nombre del producto:");
-    let costoConIva = parseFloat(prompt("Ingrese el precio con iva que compramos la mercaderia:"));
-    let cantidad = parseInt(prompt("Ingrese la cantidad comprada:"));
-    let plazoDePago = prompt("Ingrese plazo de pago:");
+    let idProveedor = prompt("Ingrese el número de proveedor (Ej. 1190):");
+    let seccion = prompt("Ingrese sección: (Ej.BEBIDAS)");
+    let id = parseInt(prompt("Ingrese el id del producto: (EJ. 60010)"));
+    let nombreDeProducto = prompt("Ingrese el nombre del producto: (Ej. SPRITE ZERO BT 1L)");
+    let costoConIva = parseFloat(prompt("Ingrese el precio con iva que compramos la mercaderia: (Ej. 120)"));
+    let cantidad = parseInt(prompt("Ingrese la cantidad comprada: (Ej. 10)"));
+    let plazoDePago = prompt("Ingrese plazo de pago: (Ej. 120 DIAS)");
     productos.push(new Producto(fechaCompra,idProveedor,seccion,id,nombreDeProducto,costoConIva,cantidad,plazoDePago));
 }
 agregarProductos();
