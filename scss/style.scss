@@ -1,0 +1,13 @@
+
+//base
+@import './base/vars';
+@import './base/reset';
+@import './base/mixin';
+@import './base/extend';
+
+//components
+@import './components/footer';
+@import './components/header';
+
+//layout
+@import './layout/index';

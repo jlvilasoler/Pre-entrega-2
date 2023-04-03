@@ -65,7 +65,7 @@ function agregarProductos() {
     let cantidad = parseInt(prompt("Ingrese la cantidad comprada: (Ej. 10)"));
     let plazoDePago = plazoPago();
     if(plazoDePago < 6){
-        alert("Operación Correcta");
+        alert("Operación Finalizada");
     }else{
         alert("Opcion Incorrecta, intente nuevamente");
     }
