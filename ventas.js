@@ -1,3 +1,5 @@
+//SECCION VENTAS : PRE-ENTREGA 1:
+
 // Variables:
 let total = 0;
 let descuento = 0; // Descuento del 0% (por defecto)
