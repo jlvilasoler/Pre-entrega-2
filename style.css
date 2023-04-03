@@ -10,9 +10,8 @@ a {
   text-decoration: none;
   color: rgba(126, 124, 124, 0.843);
   transition: 0.4s;
-  padding: 0px;
+  padding: 10px;
 }
 
-body {
-  background-color: aquamarine;
-}/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.css.map */
