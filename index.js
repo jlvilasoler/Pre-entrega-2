@@ -41,10 +41,10 @@ class Producto {
 
 }
 
-const producto1 = new Producto("12-12-12", 9991, 1001, "BEBIDAS", 60001, "COCA COLA LIGHT 600ML", 100, 2, "5");
-const producto2 = new Producto("12-12-12", 9992, 1023, "BEBIDAS", 60002, "POMELO PASO DE LOS TOROS BT.500ML", 100, 2,4);
-const producto3 = new Producto("12-12-12", 9993, 1011, "BEBIDAS", 60003, "COCA COLA BT 600ML", 100, 2,3);
-const producto4 = new Producto("12-12-12", 9994, 1090, "BEBIDAS", 60004, "WHISKY JOHNNIE WALKER-ETIQUETA NEGRA 1L", 100, 2,2);
+const producto1 = new Producto("12-12-12", 9991, 1001, 1, 60001, "COCA COLA LIGHT 600ML", 100, 2, "5");
+const producto2 = new Producto("12-12-12", 9992, 1023, 1, 60002, "POMELO PASO DE LOS TOROS BT.500ML", 100, 2,4);
+const producto3 = new Producto("12-12-12", 9993, 1011, 1, 60003, "COCA COLA BT 600ML", 100, 2,3);
+const producto4 = new Producto("12-12-12", 9994, 1090, 1, 60004, "WHISKY JOHNNIE WALKER-ETIQUETA NEGRA 1L", 100, 2,2);
 
 const productos = [producto1, producto2, producto3, producto4];
 console.log(productos)
@@ -64,6 +64,12 @@ function agregarProductos() {
     let costoConIva = parseFloat(prompt("Ingrese el precio con iva que compramos la mercaderia: (Ej. 120)"));
     let cantidad = parseInt(prompt("Ingrese la cantidad comprada: (Ej. 10)"));
     let plazoDePago = plazoPago();
+    if(plazoDePago < 6){
+        alert("Operación Correcta");
+    }else{
+        alert("Opcion Incorrecta, intente nuevamente");
+    }
+
     productos.push(new Producto(fechaCompra, idProveedor, numeroFactura, seccion, id, nombreDeProducto, costoConIva, cantidad, plazoDePago));
 }
 agregarProductos();
@@ -76,7 +82,7 @@ function ingresarSeccion() {
 }
 
 function plazoPago() {
-    let plazoPago = prompt("Elije el plazo de pago:\n1 - CREDITO A 30 DIAS\n2 - CREDITO A 60 DIAS\n3 - CREDITO A 90 DIAS\n4 - CREDITO A 120 DIAS\n5 - CONTADO");
+    let plazoPago = prompt("Elije el plazo de pago:\n1 - CREDITO A 30 DIAS\n2 - CREDITO A 60 DIAS\n3 - CREDITO A 90 DIAS\n4- CREDITO A 120 DIAS\n5 - CONTADO");
     return plazoPago
 }
 
