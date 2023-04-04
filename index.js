@@ -54,6 +54,7 @@ console.log(productos)
 
 
 // 1 - FUNCIONALIDAD PARA AGREGAR PRODUCTOS COMPRADOS (INGRESO DE MERCADERIA):
+
 function agregarProductos() {
     let fechaCompra = prompt("Ingrese la fecha de compra: (formato dd-mm-yy)");
     let idProveedor = prompt("Ingrese el número de proveedor (Ej. 1190):");
@@ -72,6 +73,7 @@ function agregarProductos() {
 
     productos.push(new Producto(fechaCompra, idProveedor, numeroFactura, seccion, id, nombreDeProducto, costoConIva, cantidad, plazoDePago));
 }
+
 agregarProductos();
 console.log(productos);
 
@@ -85,6 +87,9 @@ function plazoPago() {
     let plazoPago = prompt("Elije el plazo de pago:\n1 - CREDITO A 30 DIAS\n2 - CREDITO A 60 DIAS\n3 - CREDITO A 90 DIAS\n4- CREDITO A 120 DIAS\n5 - CONTADO");
     return plazoPago
 }
+
+
+
 
 // 2 - ORDENAR EL LISTADO DE PRODUCTOS QUE TENGO EN LA LISTA
 for (const prod of productos) {
@@ -118,34 +123,40 @@ console.log("D) TOTAL IVA VENTAS (en pesos): " + TotalIvaVentas);
 
 
 
+
+
 // 4 - FIND:
 //FIND , buscaremos un numero de ID DE ARTICULO determinado, se queda con el primero id que encuentra:
-let idArticuloEncontrado = productos.find((producto) => producto.id == "60004");
+//(nos da una tabla con la descripcion del articulo)
+const idbuscador = prompt("Que id desea buscar? (Ej. 60001 al 60004) - ver en console.table");
+let idArticuloEncontrado = productos.find((producto) => producto.id == idbuscador);
 if (idArticuloEncontrado != undefined) {
-    console.table(idArticuloEncontrado);
+    console.table(idArticuloEncontrado); //SI ENCUENTRA EL ID , NOS DA INFORMACION DEL PRODUCTO EN CONSOLE.TABLE
 } else {
-    console.table("id articulo no encontrado");
+    alert("id articulo no encontrado");
 }
 
 
 // 5 - MAP:
-//MAP, nos da el listado de articulos con sus precios de venta :
+//MAP, nos da el listado de articulos con sus precios de venta (VER EN CONSOLE.TABLE):
 const listaNombreArticuloYPrecio = productos.map((producto) => {
     return {
         nombreProducto: producto.nombreDeProducto.toUpperCase(),
         precioVenta: producto.precioVentaConIva
     }
 });
-console.log(listaNombreArticuloYPrecio);
+console.table(listaNombreArticuloYPrecio);
 
 
 // 6 - FILTER:
-//FILTER, nos devuelve la busqueda de todos los articulos que son botellas "BT":
-const buscadorNombresProductos = productos.filter((producto) => producto.nombreDeProducto.includes("BT"));
+//FILTER, nos devuelve la busqueda de la palabra que se indique y la busca en los productos:
+const buscadorPalabra = prompt("Que palabra desea buscar? (Ej. BT) - ver en console.log");
+const buscadorNombresProductos = productos.filter((producto) => producto.nombreDeProducto.includes(buscadorPalabra));
 console.log(buscadorNombresProductos);
 
 
 // 7 - SOME:
-//SOME, nos indica por nombre , si el articulo existe o no en la base de datos (nos da true o false): 
+//SOME, nos indica por nombre , si el articulo existe o no en la base de datos (nos da true o false):
+//Nos dice si el nombre indicado se encuentra en la base de datos (es el nombre identico)
 const existeArticulo = productos.some((producto) => producto.nombreDeProducto == "WHISKY JOHNNIE WALKER-ETIQUETA NEGRA 1L");
-console.log(existeArticulo); // RESULTADO = TRUE
+console.log(existeArticulo); // EN ESTE CASO EL RESULTADO = TRUE
