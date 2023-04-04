@@ -149,8 +149,8 @@ console.table(listaNombreArticuloYPrecio);
 
 
 // 6 - FILTER:
-// FILTER, nos devuelve la busqueda de la palabra que se indique y la busca en los productos:
-const buscadorPalabra = prompt("Que palabra desea buscar? (Ej. BT) - ver en console.log");
+// FILTER, nos devuelve la busqueda de la palabra que se indique y la busca en los productos (Ej. COCA, POMELO, BT, WHISKY... cualquier palabra suelta que este en los nombres de productos):
+const buscadorPalabra = prompt("Que palabra desea buscar? - ver en console.log");
 const buscadorNombresProductos = productos.filter((producto) => producto.nombreDeProducto.includes(buscadorPalabra));
 console.log(buscadorNombresProductos);
 
